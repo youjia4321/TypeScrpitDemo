@@ -5,11 +5,12 @@
         (newTask)="launchNewTaskDialog()" 
         (copyTask)="launchCopyTaskDialog()"
         (deleteTask)="launchDeleteTaskDialog()"
+        (editListTask)="launchEditListTaskDialog()"
         ></app-task-header>
         <app-task-item *ngFor="let task of list.tasks" [item]="task" (taskClick)="launchUpdateTaskDialog(task)"></app-task-item>
     </app-task-list>
 </div>
 
-<button class="fab-button" mat-fab type="button" (click)="launchNewTaskDialog()">
+<button class="fab-button" mat-fab type="button" (click)="launchNewListTaskDialog()" >
     <mat-icon>add</mat-icon>
 </button>
