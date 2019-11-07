@@ -1,0 +1,17 @@
+<div class="app-header">
+    <span class="header-trigger" (click)="onClickToggle()">
+        <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-fold' : 'menu-unfold'"></i>
+    </span>
+
+    <div class="menu" *ngIf="isLogin">
+        <span class="fill-space"><i nz-icon nzType="user" nzTheme="outline"></i></span>
+        <span class="fill-space">| 超级管理员</span>
+        <span class="fill-space" nzTooltipTitle="管理" nzTooltipPlacement="bottom" nz-tooltip><i nz-icon nzType="setting" nzTheme="outline"></i></span>
+        <span class="fill-space" nzTooltipTitle="退出" nzTooltipPlacement="bottom" nz-tooltip><i nz-icon nzType="logout" nzTheme="outline"></i></span>
+    </div>
+
+    <div class="menu" *ngIf="!isLogin">
+        <span class="fill-space"><a routerLink="/login">登录</a></span>
+        <span class="fill-space"><a routerLink="/register">注册</a></span>
+    </div>
+</div>

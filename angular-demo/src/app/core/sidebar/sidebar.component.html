@@ -1,0 +1,31 @@
+<div class="sidebar-logo">
+    <a routerLink="/welcome">
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+        <h1>Perdon Demo Of Angular</h1>
+    </a>
+</div>
+<ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+    <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+        <ul>
+            <li nz-menu-item nzMatchRouter>
+                <a routerLink="/welcome">Home</a>
+            </li>
+            <li nz-menu-item nzMatchRouter>
+                <a routerLink="/login">Login</a>
+            </li>
+            <li nz-menu-item nzMatchRouter>
+                <a routerLink="/register">Register</a>
+            </li>
+            <li nz-menu-item nzMatchRouter>
+                <a>Workplace</a>
+            </li>
+        </ul>
+    </li>
+    <li nz-submenu nzTitle="Form" nzIcon="form">
+        <ul>
+            <li nz-menu-item nzMatchRouter>
+                <a>Basic Form</a>
+            </li>
+        </ul>
+    </li>
+</ul>

@@ -1,0 +1,30 @@
+.warp {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.ant-card-bordered {
+    border: none !important;
+}
+
+.login-form {
+    max-width: 300px;
+  }
+
+  .login-form-forgot {
+    float: right;
+  }
+
+  .login-form-button {
+    width: 100%;
+  }
+
+  
+  // nz-card {
+  //   width: 350px;
+  // }
