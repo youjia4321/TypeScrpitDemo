@@ -3,7 +3,7 @@
         <nz-card-meta [nzTitle]="item.name" [nzDescription]="item.desc"></nz-card-meta>
     </nz-card>
     <ng-template #coverTemplate>
-        <img src="item.coverImg" alt="example">
+        <img [src]="item.coverImg" alt="example">
     </ng-template>
     <ng-template #actionEdit>
         <i nz-icon nzType="edit" nzTooltipTitle="编辑" nzTooltipPlacement="bottom" nz-tooltip></i>
