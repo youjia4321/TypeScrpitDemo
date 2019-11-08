@@ -50,7 +50,7 @@ export class ProjectListComponent implements OnInit {
   launchDelConfirmModal(id: number) {
     this.modalService.confirm({
       nzTitle: '系统提示',
-      nzContent: '<b style="color: red">确认删除该任务吗？</b>',
+      nzContent: '<b>确认删除该任务吗？</b>',
       nzOkText: '确认',
       nzOkType: 'danger',
       nzOnOk: () => {
