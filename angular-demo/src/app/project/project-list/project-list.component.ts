@@ -7,26 +7,30 @@ import { NzMessageService, NzModalService } from 'ng-zorro-antd';
   styleUrls: ['./project-list.component.scss']
 })
 export class ProjectListComponent implements OnInit {
-  isVisible = false;
+  isNewVisible = false;
+  isEditVisible = false;
   len: number;
-  nameValue: "";
-  descValue: "";
+  editIndex: number;
+  nameValue: string;
+  descValue: string;
+  editName: string;
+  editDesc: string;
   projects = [
     {
       id: 1,
-      name: "企业协作平台",
+      name: "企业协作平台1",
       desc: "这是一个企业内部项目",
       coverImg: "assets/img/banner2.png"
     },
     {
       id: 2,
-      name: "企业协作平台",
+      name: "企业协作平台2",
       desc: "这是一个企业内部项目",
       coverImg: "assets/img/banner1.png"
     },
     {
       id: 3,
-      name: "企业协作平台",
+      name: "企业协作平台3",
       desc: "这是一个企业内部项目",
       coverImg: "assets/img/banner2.png"
     }
@@ -40,7 +44,14 @@ export class ProjectListComponent implements OnInit {
   }
 
   newProject() {
-    this.isVisible = true;
+    this.isNewVisible = true;
+  }
+
+  editProject(id: number) {
+    this.editIndex = id;
+    this.editName = this.projects[this.proIndex(this.editIndex)].name;
+    this.editDesc = this.projects[this.proIndex(this.editIndex)].desc;
+    this.isEditVisible = true;
   }
 
   proIndex(id: number) {
@@ -62,7 +73,7 @@ export class ProjectListComponent implements OnInit {
     })
   }
 
-  handleOk() {
+  newOk() {
     this.projects.push({
       id: this.len +1,
       name: this.nameValue,
@@ -71,12 +82,30 @@ export class ProjectListComponent implements OnInit {
     })
     this.nameValue = '';
     this.descValue = '';
-    this.isVisible = false;
+    this.isNewVisible = false;
     this.message.success("添加项目成功!");
   }
 
-  handleCancel() {
-    this.isVisible = false;
+  newCancel() {
+    this.nameValue = '';
+    this.descValue = '';
+    this.isNewVisible = false;
   }
+
+  editOk() {
+    this.isEditVisible = false;
+    this.projects[this.proIndex(this.editIndex)].name = this.editName;
+    this.projects[this.proIndex(this.editIndex)].desc = this.editDesc;
+    this.editName = '';
+    this.editDesc = ''
+    this.message.success("编辑项目成功!");
+  }
+
+  editCancel() {
+    this.editName = '';
+    this.editDesc = '';
+    this.isEditVisible = false;
+  }
+
 
 }

@@ -6,7 +6,8 @@
         <img [src]="item.coverImg" alt="example">
     </ng-template>
     <ng-template #actionEdit>
-        <i nz-icon nzType="edit" nzTooltipTitle="编辑" nzTooltipPlacement="bottom" nz-tooltip></i>
+        <i nz-icon nzType="edit" nzTooltipTitle="编辑" nzTooltipPlacement="bottom" nz-tooltip
+            (click)="onEditClick(item.id)"></i>
     </ng-template>
     <ng-template #actionInvite>
         <i nz-icon nzType="plus" nzTooltipTitle="邀请" nzTooltipPlacement="bottom" nz-tooltip></i>

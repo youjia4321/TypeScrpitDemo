@@ -1,10 +1,11 @@
 <div class="project">
     <app-project-item class="project-card" *ngFor="let project of projects" [item]="project"
-        (delProject)="launchDelConfirmModal($event)">
+        (delProject)="launchDelConfirmModal($event)"
+        (editProject)="editProject($event)">
 
     </app-project-item>
 
-    <nz-modal [nzVisible]="isVisible" nzTitle="添加新任务" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <nz-modal [nzVisible]="isNewVisible" nzTitle="新建项目" (nzOnCancel)="newCancel()" (nzOnOk)="newOk()">
         <div class="input">
             <nz-input-group nzAddOnBefore="任务名称">
                 <input nz-input type="text" [(ngModel)]="nameValue" name="name">
@@ -12,7 +13,20 @@
         </div>
         <div class="input">
             <nz-input-group nzAddOnBefore="任务描述">
-                <input nz-input type="text" [(ngModel)]="descValue" name="name">
+                <input nz-input type="text" [(ngModel)]="descValue" name="desc">
+            </nz-input-group>
+        </div>
+    </nz-modal>
+
+    <nz-modal [nzVisible]="isEditVisible" nzTitle="编辑项目" (nzOnCancel)="editCancel()" (nzOnOk)="editOk()">
+        <div class="input">
+            <nz-input-group nzAddOnBefore="任务名称">
+                <input nz-input type="text" [(ngModel)]="editName" name="editName">
+            </nz-input-group>
+        </div>
+        <div class="input">
+            <nz-input-group nzAddOnBefore="任务描述">
+                <input nz-input type="text" [(ngModel)]="editDesc" name="editDesc">
             </nz-input-group>
         </div>
     </nz-modal>
