@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Md5 } from 'ts-md5/dist/md5';
-import { Router } from '@angular/router'
+import {
+  Router,
+  ActivatedRoute,
+  ActivatedRouteSnapshot,
+  RouterState,
+  RouterStateSnapshot
+} from '@angular/router'
 import { NzMessageService } from 'ng-zorro-antd/message'
 
 @Component({
@@ -20,9 +26,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  router: Router;
-
-  constructor(private fb: FormBuilder, private message: NzMessageService) { }
+  constructor(private fb: FormBuilder, private message: NzMessageService, public router: Router) { }
 
   ngOnInit() {
     this.validateForm = this.fb.group({
@@ -44,13 +48,14 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('user', JSON.stringify(obj))
 
       this.message.success("login success!")
+      this.router.navigate(['/welcome'])
+
+      // this.router.navigateByUrl('welcome') 
     } else {
       this.message.error("login fail!")
     }
 
 
-
-    // this.router.navigateByUrl('index') 
 
   }
 
