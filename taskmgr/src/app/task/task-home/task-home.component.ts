@@ -130,7 +130,8 @@ export class TaskHomeComponent implements OnInit {
   }
 
   launchNewListTaskDialog() {
-    const dialogRef = this.dialog.open(NewTaskListComponent, {data: {title: "添加任务列表"}})
+    const dialogRef = this.dialog.open(NewTaskListComponent, {data: {title: "新建列表"}})
+    dialogRef.afterClosed().subscribe(result => console.log(result));
   }
 
   launchEditListTaskDialog() {
