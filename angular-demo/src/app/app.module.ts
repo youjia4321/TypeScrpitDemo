@@ -11,6 +11,7 @@ import { CoreModule } from './core/core.module';
 import { LoginRegisterModule } from './login-register/login-register.module';
 import { PageModule } from './page/page.module';
 import { ProjectModule } from './project/project.module';
+import { TaskModule } from './task/task.module';
 
 registerLocaleData(zh);
 
@@ -26,6 +27,7 @@ registerLocaleData(zh);
     LoginRegisterModule,
     PageModule,
     ProjectModule,
+    TaskModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
