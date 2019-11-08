@@ -1,1 +1,23 @@
-<p>project-list works!</p>
+<div class="project">
+    <app-project-item class="project-card" *ngFor="let project of projects" [item]="project"
+        (delProject)="launchDelConfirmModal($event)">
+
+    </app-project-item>
+
+    <nz-modal [nzVisible]="isVisible" nzTitle="添加新任务" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+        <div class="input">
+            <nz-input-group nzAddOnBefore="任务名称">
+                <input type="text" [(ngModel)]="nameValue" name="name">
+            </nz-input-group>
+        </div>
+        <div class="input">
+            <nz-input-group nzAddOnBefore="任务描述">
+                <input type="text" [(ngModel)]="descValue" name="name">
+            </nz-input-group>
+        </div>
+    </nz-modal>
+
+    <button nx-button class="fab-button" nzType="primary" nzSize="large" nzShape="circle" (click)="newProject()">
+        <i nz-icon nzType="plus"></i>
+    </button>
+</div>
