@@ -1,1 +1,18 @@
-<p>project-item works!</p>
+<div class="nz-card">
+    <nz-card [nzCover]="coverTemplate" [nzActions]="[actionEdit, actionInvite, actionDelete]">
+        <nz-card-meta [nzTitle]="item.name" [nzDescription]="item.desc"></nz-card-meta>
+    </nz-card>
+    <ng-template #coverTemplate>
+        <img src="item.coverImg" alt="example">
+    </ng-template>
+    <ng-template #actionEdit>
+        <i nz-icon nzType="edit" nzTooltipTitle="编辑" nzTooltipPlacement="bottom" nz-tooltip></i>
+    </ng-template>
+    <ng-template #actionInvite>
+        <i nz-icon nzType="plus" nzTooltipTitle="邀请" nzTooltipPlacement="bottom" nz-tooltip></i>
+    </ng-template>
+    <ng-template #actionDelete>
+        <i nz-icon nzType="delete" nzTooltipTitle="删除" nzTooltipPlacement="bottom" nz-tooltip
+            (click)="onDelClick(item.id)"></i>
+    </ng-template>
+</div>
