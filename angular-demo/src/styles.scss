@@ -5,8 +5,15 @@ html, app-root, body, .app-layout{
     margin: 0;
 }
 
-::-webkit-scrollbar {
-    width: 1px;
-    height: 1px;
+::-webkit-scrollbar
+{
+    width: 4px;
+    height: 4px;
 }
-  
+ 
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: #bcc1c5;
+}
