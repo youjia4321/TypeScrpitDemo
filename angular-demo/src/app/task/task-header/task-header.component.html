@@ -1,0 +1,24 @@
+<div class="task-header">
+    <div class="header">
+        <span>{{ header }}</span>
+    </div>
+    <div class="fill">
+        <button class="btn" nz-button>
+            <i nz-icon nzType="plus-circle" nzTheme="outline"></i>
+            <span>新任务</span>
+        </button>
+    </div>
+    <div>
+        <button class="btn" nz-button nzNoAnimation nz-dropdown [nzDropdownMenu]="menu">
+            <i nz-icon nzType="ellipsis" nzTheme="outline"></i>
+        </button>
+    </div>
+</div>
+
+<nz-dropdown-menu #menu="nzDropdownMenu">
+    <ul nz-menu>
+        <li nz-menu-item><i nz-icon nzType="edit" nzTheme="outline"></i>修改列表名称</li>
+        <li nz-menu-item><i nz-icon nzType="diff" nzTheme="outline"></i>移动本列表所有内容</li>
+        <li nz-menu-item><i nz-icon nzType="delete" nzTheme="outline"></i>删除列表</li>
+    </ul>
+</nz-dropdown-menu>

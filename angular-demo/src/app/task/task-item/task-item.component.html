@@ -1,0 +1,19 @@
+<ul nz-list [nzDataSource]="data" nzBordered nzSize="large" [nzFooter]="'Footer'"
+    [nzRenderItem]="largeItem">
+    <ng-template #largeItem let-item>
+        <li nz-list-item [nzContent]="content" nzNoFlex>
+            <ng-template #content>
+                <div class="task">
+                    <div class="task-name" [nzTooltipTitle]="item.desc" nzPlacement="bottom" nz-tooltip>
+                        {{ item.desc }}
+                    </div>
+                    <div class="task-date">
+                        {{ item.dueDate | date: "yy-MM-dd" }}
+                    </div>
+                    <a>编辑</a>
+                </div>
+
+            </ng-template>
+        </li>
+    </ng-template>
+</ul>
