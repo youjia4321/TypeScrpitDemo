@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { LoginRegisterModule } from './login-register/login-register.module';
 import { PageModule } from './page/page.module';
+import { ProjectModule } from './project/project.module';
 
 registerLocaleData(zh);
 
@@ -24,6 +25,7 @@ registerLocaleData(zh);
     CoreModule,
     LoginRegisterModule,
     PageModule,
+    ProjectModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
